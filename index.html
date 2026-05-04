@@ -1,11 +1,296 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Votre Nom] | Portfolio Data</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #2563eb; /* Bleu Data */
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text: #334155;
+            --accent: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 0 1rem;
+            margin-top: 50px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 10%;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin: 0.2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            nav ul { display: none; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue sur le portfolio de Thomas Lefèvre</h1>
-    <p>Ceci est mon site en ligne </p>
+
+    <nav>
+        <div class="logo">DATA_PORTFOLIO</div>
+        <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>[Votre Nom]</h1>
+        <p>Analyste de Données spécialisé en <span class="highlight">Visualisation</span> et <span class="highlight">Machine Learning</span>.</p>
+        <p style="margin-top: 20px;">Passionné par l'extraction de valeur à partir des données brutes.</p>
+    </header>
+
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <p style="max-width: 800px; margin: 0 auto; text-align: center;">
+            Diplômé en [Votre Formation], j'aide les entreprises à prendre de meilleures décisions grâce à l'analyse statistique et à la modélisation prédictive. 
+            Je maîtrise l'ensemble du pipeline data : du nettoyage (ETL) à la communication des résultats.
+        </p>
+    </section>
+
+    <section id="skills" style="background: #f1f5f9;">
+        <h2>Compétences Techniques</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Langages</h3>
+                <span class="skill-tag">Python (Pandas, Scikit-learn)</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">R</span>
+            </div>
+            <div class="skill-card">
+                <h3>Visualisation</h3>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Matplotlib / Seaborn</span>
+            </div>
+            <div class="skill-card">
+                <h3>Outils</h3>
+                <span class="skill-tag">Git / GitHub</span>
+                <span class="skill-tag">Excel Avancé</span>
+                <span class="skill-tag">Docker</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projets Majeurs</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Analyse des ventes E-commerce</h3>
+                    <p>Nettoyage d'un dataset de 500k lignes et création d'un dashboard interactif sous Tableau pour identifier les baisses de revenus.</p>
+                    <a href="#" class="project-link">Voir sur GitHub →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Prédiction du Churn Client</h3>
+                    <p>Développement d'un modèle de classification (Random Forest) pour prédire le départ des clients avec une précision de 89%.</p>
+                    <a href="#" class="project-link">Voir le code →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h3>Web Scraping Immobilier</h3>
+                    <p>Automatisation de la récupération de données sur des sites immobiliers pour analyser les prix du marché en temps réel.</p>
+                    <a href="#" class="project-link">Explorer →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Me Contacter</h2>
+        <p>Disponible pour de nouvelles opportunités en Data.</p>
+        <div class="social-links" style="margin-top: 1.5rem;">
+            <a href="mailto:votre@email.com">Email</a>
+            <a href="https://linkedin.com/in/votre-profil">LinkedIn</a>
+            <a href="https://github.com/votre-pseudo">GitHub</a>
+        </div>
+        <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.6;">© 2024 [Votre Nom]. Propulsé par GitHub Pages.</p>
+    </footer>
+
 </body>
 </html>
