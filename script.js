@@ -27,4 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Sélectionner toutes les cartes de compétences
+    const skillCards = document.querySelectorAll('.skill-card');
+
+    // Pour chaque carte, écouter les événements de la souris
+    skillCards.forEach(card => {
+        
+        // Évènement : La souris entre sur la carte
+        card.addEventListener('mouseenter', () => {
+            // Ajouter la classe 'active' pour déclencher l'animation CSS
+            card.classList.add('active');
+        });
+
+        // Évènement : La souris sort de la carte
+        card.addEventListener('mouseleave', () => {
+            // Retirer la classe 'active' pour masquer à nouveau
+            card.classList.remove('active');
+        });
+        
+    });
 });
