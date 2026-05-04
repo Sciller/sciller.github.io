@@ -111,32 +111,63 @@ h2::after {
 }
 
 /* Skills */
+/* --- SECTION SKILLS MISE À JOUR --- */
+
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Légèrement plus large pour les tags */
     gap: 2rem;
 }
 
 .skill-card {
     background: white;
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     text-align: center;
+    /* Préparation pour l'animation JS */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indique que la carte est interactive */
+    overflow: hidden; /* Pour que l'animation reste dans la carte */
+}
+
+/* Effet CSS simple au survol de la carte elle-même */
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 
 .skill-card h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--primary);
+    transition: margin-bottom 0.3s ease;
 }
 
+/* NOUVEAU STYLE : Masquer les tags par défaut */
 .skill-tag {
     display: inline-block;
     background: #e2e8f0;
-    padding: 0.2rem 0.8rem;
+    color: var(--text);
+    padding: 0.4rem 1rem;
     border-radius: 20px;
-    margin: 0.2rem;
+    margin: 0.3rem;
     font-size: 0.9rem;
+    
+    /* Animation de masquage */
+    opacity: 0; /* Invisible */
+    transform: translateY(20px); /* Légèrement décalé vers le bas */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Fluidité */
+}
+
+/* NOUVELLE CLASSE : Sera ajoutée par le JavaScript au survol */
+.skill-card.active .skill-tag {
+    opacity: 1; /* Rendu visible */
+    transform: translateY(0); /* Remis à sa position normale */
+}
+
+/* Optionnel : Rapprocher le titre quand les compétences apparaissent */
+.skill-card.active h3 {
+    margin-bottom: 0.8rem;
 }
 
 /* Projects */
